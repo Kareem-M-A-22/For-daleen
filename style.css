@@ -1,0 +1,259 @@
+/* =========================================================
+   FOR DALEEN ❤️
+   STYLE.CSS
+   Part 1
+=========================================================*/
+
+/* ---------- Reset ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Cairo',sans-serif;
+
+    background:#fff;
+
+    overflow:hidden;
+
+    color:#222;
+
+    width:100vw;
+    height:100vh;
+
+}
+
+/* ---------- Root ---------- */
+
+:root{
+
+    --pink:#ffb6d2;
+    --pink-light:#ffddea;
+    --pink-dark:#ff7fb0;
+
+    --white:#ffffff;
+
+    --text:#2d2d2d;
+
+    --glass:rgba(255,255,255,.72);
+
+    --shadow:
+    0 15px 45px rgba(0,0,0,.08);
+
+    --radius:30px;
+
+    --transition:.45s;
+
+}
+
+/* ---------- Background ---------- */
+
+#background{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-5;
+
+    background:
+    linear-gradient(
+    135deg,
+
+    #ffffff 0%,
+
+    #fff5fa 35%,
+
+    #ffe7f2 70%,
+
+    #fff7fb 100%
+
+    );
+
+    overflow:hidden;
+
+}
+
+/* ---------- Floating Blur ---------- */
+
+#background::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    background:#ffd7ea;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    top:-120px;
+    left:-120px;
+
+    opacity:.65;
+
+    animation:blobOne 18s ease-in-out infinite;
+
+}
+
+#background::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    background:#ffeaf4;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    right:-100px;
+    bottom:-100px;
+
+    animation:blobTwo 22s ease-in-out infinite;
+
+}
+
+/* ---------- Main App ---------- */
+
+#app{
+
+    width:100%;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+}
+
+/* ---------- Card ---------- */
+
+.page{
+
+    width:min(92vw,760px);
+
+    min-height:470px;
+
+    background:var(--glass);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    padding:45px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    transition:var(--transition);
+
+}
+
+/* ---------- Logo ---------- */
+
+.logo{
+
+    position:absolute;
+
+    top:22px;
+
+    left:25px;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#ff7ba9;
+
+    user-select:none;
+
+    letter-spacing:1px;
+
+}
+
+/* ---------- Titles ---------- */
+
+.page h1{
+
+    font-size:34px;
+
+    color:#ff6fa5;
+
+    margin-bottom:25px;
+
+}
+
+.page p{
+
+    font-size:23px;
+
+    line-height:2.1;
+
+    color:#333;
+
+    white-space:pre-wrap;
+
+}
+
+/* ---------- Mobile ---------- */
+
+@media(max-width:650px){
+
+.page{
+
+padding:28px;
+
+min-height:430px;
+
+}
+
+.page h1{
+
+font-size:28px;
+
+}
+
+.page p{
+
+font-size:20px;
+
+line-height:1.9;
+
+}
+
+}
