@@ -257,3 +257,545 @@ line-height:1.9;
 }
 
 }
+
+/* =========================================================
+   STYLE.CSS
+   Part 2
+   Buttons - Inputs - Animations
+=========================================================*/
+
+/* ---------- Buttons ---------- */
+
+.btns{
+
+    margin-top:40px;
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+button{
+
+    font-family:'Cairo',sans-serif;
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    padding:14px 32px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+    135deg,
+    var(--pink),
+    var(--pink-dark)
+    );
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    opacity .25s ease;
+
+    box-shadow:
+    0 8px 20px rgba(255,127,176,.28);
+
+}
+
+button:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+    0 12px 28px rgba(255,127,176,.38);
+
+}
+
+button:active{
+
+    transform:scale(.96);
+
+}
+
+button.secondary{
+
+    background:white;
+
+    color:#444;
+
+    box-shadow:
+    0 8px 18px rgba(0,0,0,.08);
+
+}
+
+button.secondary:hover{
+
+    background:#fafafa;
+
+}
+
+/* ---------- Password Input ---------- */
+
+.inputBox{
+
+    margin-top:35px;
+
+    width:min(90%,420px);
+
+}
+
+.inputBox input{
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    padding:16px 20px;
+
+    border-radius:18px;
+
+    background:white;
+
+    font-size:18px;
+
+    font-family:'Cairo',sans-serif;
+
+    text-align:center;
+
+    box-shadow:
+    0 8px 22px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.inputBox input:focus{
+
+    transform:scale(1.02);
+
+    box-shadow:
+    0 12px 30px rgba(255,127,176,.22);
+
+}
+
+/* ---------- Hidden ---------- */
+
+.hidden{
+
+    display:none !important;
+
+}
+
+/* ---------- Fade ---------- */
+
+.fadeIn{
+
+    animation:fadeIn .45s forwards;
+
+}
+
+.fadeOut{
+
+    animation:fadeOut .35s forwards;
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:
+translateY(20px)
+scale(.98);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+translateY(0)
+scale(1);
+
+}
+
+}
+
+@keyframes fadeOut{
+
+from{
+
+opacity:1;
+
+transform:
+translateY(0)
+scale(1);
+
+}
+
+to{
+
+opacity:0;
+
+transform:
+translateY(-10px)
+scale(.98);
+
+}
+
+}
+
+/* ---------- Slide ---------- */
+
+.slideIn{
+
+    animation:slideIn .45s forwards;
+
+}
+
+.slideOut{
+
+    animation:slideOut .35s forwards;
+
+}
+
+@keyframes slideIn{
+
+from{
+
+opacity:0;
+
+transform:
+translateX(60px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+translateX(0);
+
+}
+
+}
+
+@keyframes slideOut{
+
+from{
+
+opacity:1;
+
+transform:
+translateX(0);
+
+}
+
+to{
+
+opacity:0;
+
+transform:
+translateX(-60px);
+
+}
+
+}
+
+/* ---------- Floating ---------- */
+
+.float{
+
+    animation:floating 5s ease-in-out infinite;
+
+}
+
+@keyframes floating{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ---------- Button Glow ---------- */
+
+@keyframes glow{
+
+0%{
+
+box-shadow:
+0 8px 20px rgba(255,127,176,.28);
+
+}
+
+50%{
+
+box-shadow:
+0 12px 34px rgba(255,127,176,.52);
+
+}
+
+100%{
+
+box-shadow:
+0 8px 20px rgba(255,127,176,.28);
+
+}
+
+}
+
+.glow{
+
+animation:glow 2.8s infinite;
+
+}
+
+/* ---------- Disable Selection ---------- */
+
+button,
+.logo{
+
+user-select:none;
+
+}
+
+/* ---------- Responsive ---------- */
+
+@media(max-width:650px){
+
+button{
+
+width:100%;
+
+}
+
+.btns{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+}
+
+/* =========================================================
+   STYLE.CSS
+   Part 3
+   Hearts - Doodles - Ring - Loader
+=========================================================*/
+
+/* ---------- Floating Hearts ---------- */
+
+#hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+}
+
+.heart{
+
+    position:absolute;
+
+    color:rgba(255,170,200,.35);
+
+    animation:heartFloat linear forwards;
+
+    user-select:none;
+
+}
+
+@keyframes heartFloat{
+
+0%{
+
+transform:
+translateY(120vh)
+scale(.8);
+
+opacity:0;
+
+}
+
+15%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(-20vh)
+rotate(360deg)
+scale(1.2);
+
+opacity:0;
+
+}
+
+}
+
+/* ---------- Doodles ---------- */
+
+#doodles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-3;
+
+    opacity:.15;
+
+}
+
+/* ---------- Loader ---------- */
+
+.loader{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    border:5px solid #ffd3e5;
+
+    border-top-color:#ff7fb0;
+
+    animation:spin .9s linear infinite;
+
+}
+
+@keyframes spin{
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* ---------- Ring ---------- */
+
+.ringBox{
+
+    width:180px;
+
+    margin:auto;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+}
+
+.ringBox:hover{
+
+    transform:scale(1.05);
+
+}
+
+.ring{
+
+    width:120px;
+
+    margin-top:20px;
+
+    animation:floating 4s ease-in-out infinite;
+
+}
+
+.ringGlow{
+
+    animation:ringGlow 3s infinite;
+
+}
+
+@keyframes ringGlow{
+
+0%{
+
+filter:drop-shadow(0 0 0px #fff);
+
+}
+
+50%{
+
+filter:
+drop-shadow(0 0 12px #ffe68a);
+
+}
+
+100%{
+
+filter:drop-shadow(0 0 0px #fff);
+
+}
+
+}
+
+/* ---------- Blur ---------- */
+
+.blurBackground{
+
+backdrop-filter:blur(10px);
+
+}
+
+/* ---------- Hide Scroll ---------- */
+
+::-webkit-scrollbar{
+
+width:0;
+
+height:0;
+
+}
