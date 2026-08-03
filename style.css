@@ -525,3 +525,55 @@ filter:drop-shadow(0 0 18px gold);
     z-index:-1;
     user-select:none;
 }
+
+.float-heart{
+
+    position:absolute;
+
+    bottom:-40px;
+
+    opacity:.45;
+
+    animation:floatUp linear forwards;
+
+    user-select:none;
+
+}
+
+@keyframes floatUp{
+
+    from{
+
+        transform:translateY(0) rotate(0deg);
+
+    }
+
+    to{
+
+        transform:translateY(-120vh) rotate(360deg);
+
+    }
+
+}
+
+#logo-bg{
+
+    position:fixed;
+
+    top:22px;
+
+    right:25px;
+
+    font-size:42px;
+
+    font-weight:700;
+
+    color:rgba(255,255,255,.65);
+
+    text-shadow:0 0 15px rgba(255,170,210,.5);
+
+    z-index:-1;
+
+    pointer-events:none;
+
+}
