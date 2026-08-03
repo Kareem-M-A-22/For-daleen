@@ -16,7 +16,11 @@ body{
 
     font-family:'Cairo',sans-serif;
 
-    background:linear-gradient(180deg,#fff7fb,#ffeaf4);
+    background:
+url("background.png")
+center center / cover
+no-repeat
+fixed;;
 
     overflow-x:hidden;
 
