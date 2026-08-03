@@ -112,18 +112,42 @@ function goBack(){
 
 function goTo(pageName){
 
-    if(currentPage!==pageName){
+    const card = document.querySelector(".card");
 
-        pageHistory.push(currentPage);
+    if(card){
+
+        card.classList.add("hide");
+
+        setTimeout(()=>{
+
+            if(currentPage !== pageName){
+
+                pageHistory.push(currentPage);
+
+            }
+
+            currentPage = pageName;
+
+            renderPage();
+
+        },350);
+
+    }else{
+
+        if(currentPage !== pageName){
+
+            pageHistory.push(currentPage);
+
+        }
+
+        currentPage = pageName;
+
+        renderPage();
 
     }
 
-    currentPage=pageName;
-
-    renderPage();
-
 }
-
+    
 // ===============================
 // RENDER PAGE
 // ===============================
