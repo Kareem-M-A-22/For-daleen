@@ -45,15 +45,29 @@ function typeWriter(element, text, speed = 28) {
 
     let i = 0;
 
-    function write() {
+   function typeWriter(element, text, speed = 28, callback = null){
 
-        if (i < text.length) {
+    element.innerHTML = "";
+
+    let i = 0;
+
+    function write(){
+
+        if(i < text.length){
 
             element.innerHTML += text.charAt(i);
 
             i++;
 
             setTimeout(write, speed);
+
+        }else{
+
+            if(callback){
+
+                setTimeout(callback,300);
+
+            }
 
         }
 
