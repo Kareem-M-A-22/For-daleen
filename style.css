@@ -577,3 +577,25 @@ filter:drop-shadow(0 0 18px gold);
     pointer-events:none;
 
 }
+
+/* ==========================
+PAGE TRANSITION
+========================== */
+
+.card.hide{
+
+    opacity:0;
+
+    transform:translateY(25px);
+
+    transition:.35s ease;
+
+}
+
+.card{
+
+    transition:
+    opacity .35s ease,
+    transform .35s ease;
+
+}
