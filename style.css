@@ -428,3 +428,13 @@ body{
     }
 
 }
+
+.wrong-btn{
+    background:#ffffff;
+    color:#ff5fa2;
+    border:2px solid #ff5fa2;
+}
+
+.wrong-btn:hover{
+    background:#fff0f7;
+}
