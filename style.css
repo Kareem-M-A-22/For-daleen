@@ -1,1 +1,430 @@
+/* ==========================
+   GENERAL
+========================== */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Cairo',sans-serif;
+
+    background:linear-gradient(180deg,#fff7fb,#ffeaf4);
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+    color:#222;
+
+    position:relative;
+
+}
+
+/* ==========================
+   BACKGROUND
+========================== */
+
+#background{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-3;
+
+    background:
+    radial-gradient(circle at top,#ffd9eb 0%,transparent 45%),
+    radial-gradient(circle at bottom,#ffeaf5 0%,transparent 40%);
+
+}
+
+/* ==========================
+   HAND DRAWN HEARTS
+========================== */
+
+#background::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.18;
+
+    background-image:
+
+    url("assets/heart-pattern.svg");
+
+    background-size:170px;
+
+    background-repeat:repeat;
+
+}
+
+/* ==========================
+   FLOATING HEARTS
+========================== */
+
+#hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:-2;
+
+}
+
+/* ==========================
+   MAIN
+========================== */
+
+#app{
+
+    width:min(92%,650px);
+
+    margin:40px auto;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+}
+
+/* ==========================
+   CARD
+========================== */
+
+.card{
+
+    width:100%;
+
+    background:#ffffff;
+
+    border-radius:28px;
+
+    padding:35px 28px;
+
+    box-shadow:0 15px 40px rgba(255,105,180,.15);
+
+    text-align:center;
+
+    animation:fadeUp .6s ease;
+
+}
+
+/* ==========================
+   TEXT
+========================== */
+
+.title{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#222;
+
+    margin-bottom:22px;
+
+    line-height:1.8;
+
+}
+
+.message{
+
+    font-size:22px;
+
+    line-height:2;
+
+    white-space:pre-wrap;
+
+    color:#222;
+
+}
+
+.hint{
+
+    margin-top:18px;
+
+    color:#ff4f7b;
+
+    font-size:18px;
+
+    min-height:30px;
+
+}
+
+/* ==========================
+   PASSWORD INPUT
+========================== */
+
+.password-input{
+
+    width:100%;
+
+    padding:15px 18px;
+
+    margin:20px 0;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:18px;
+
+    background:#ffeef6;
+
+    color:#222;
+
+    font-size:20px;
+
+    text-align:center;
+
+    transition:.25s;
+
+}
+
+.password-input:focus{
+
+    transform:scale(1.02);
+
+    box-shadow:0 0 0 3px rgba(255,105,180,.25);
+
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    margin-top:28px;
+
+}
+
+.main-btn{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    padding:15px 22px;
+
+    border-radius:18px;
+
+    background:#ff8fba;
+
+    color:white;
+
+    font-family:'Cairo',sans-serif;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    transition:.25s;
+
+}
+
+.main-btn:hover{
+
+    transform:translateY(-2px);
+
+    background:#ff77aa;
+
+}
+
+.main-btn:active{
+
+    transform:scale(.97);
+
+}
+
+/* ==========================
+   ANIMATIONS
+========================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes floatHeart{
+
+    0%{
+
+        transform:translateY(0) rotate(0deg);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px) rotate(4deg);
+
+    }
+
+    100%{
+
+        transform:translateY(0) rotate(0deg);
+
+    }
+
+}
+
+@keyframes sparkle{
+
+    0%{
+
+        opacity:.3;
+
+        transform:scale(.9);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.1);
+
+    }
+
+    100%{
+
+        opacity:.3;
+
+        transform:scale(.9);
+
+    }
+
+}
+
+@keyframes shake{
+
+    0%{transform:translateX(0);}
+    20%{transform:translateX(-8px);}
+    40%{transform:translateX(8px);}
+    60%{transform:translateX(-6px);}
+    80%{transform:translateX(6px);}
+    100%{transform:translateX(0);}
+
+}
+
+.shake{
+
+    animation:shake .45s;
+
+}
+
+/* ==========================
+   FLOATING DECORATIONS
+========================== */
+
+.floating-heart{
+
+    position:absolute;
+
+    animation:floatHeart 5s ease-in-out infinite;
+
+    opacity:.45;
+
+}
+
+.sparkle{
+
+    animation:sparkle 2.5s ease-in-out infinite;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width:600px){
+
+    #app{
+
+        width:95%;
+
+        padding:14px;
+
+    }
+
+    .card{
+
+        padding:28px 20px;
+
+        border-radius:22px;
+
+    }
+
+    .title{
+
+        font-size:23px;
+
+    }
+
+    .message{
+
+        font-size:19px;
+
+    }
+
+    .main-btn{
+
+        font-size:18px;
+
+        padding:14px;
+
+    }
+
+    .password-input{
+
+        font-size:18px;
+
+    }
+
+}
