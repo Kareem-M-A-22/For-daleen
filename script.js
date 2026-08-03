@@ -239,3 +239,121 @@ function renderMessage(page) {
 
 }
 
+// ===============================
+// MUSIC
+// ===============================
+
+function startMusic() {
+
+    if (musicStarted) return;
+
+    musicStarted = true;
+
+    bgMusic = new Audio("assets/music.mp3");
+
+    bgMusic.loop = true;
+
+    bgMusic.volume = 0.35;
+
+    bgMusic.play().catch(() => {});
+
+}
+
+
+// ===============================
+// RING PAGE
+// ===============================
+
+function renderRing() {
+
+    startMusic();
+
+    const page = pages.ringPage;
+
+    const card = createCard();
+
+    const title = document.createElement("h2");
+    title.className = "title";
+    title.textContent = page.title;
+
+    const box = document.createElement("div");
+    box.className = "ring-box";
+    box.innerHTML = "💍";
+
+    const message = document.createElement("div");
+    message.className = "message";
+
+    const buttons = document.createElement("div");
+    buttons.className = "buttons";
+
+    box.onclick = () => {
+
+        box.classList.add("opened");
+
+        typeWriter(message, page.text);
+
+        buttons.innerHTML = "";
+
+        buttons.appendChild(
+            createButton(page.yesButton, () => {
+
+                goTo("ending");
+
+            })
+        );
+
+        buttons.appendChild(
+            createButton(page.noButton, () => {
+
+                goTo("ringNo");
+
+            })
+        );
+
+    };
+
+    card.appendChild(title);
+    card.appendChild(box);
+    card.appendChild(message);
+    card.appendChild(buttons);
+
+    app.appendChild(card);
+
+}
+
+
+// ===============================
+// ENDING PAGE
+// ===============================
+
+function renderEnding() {
+
+    const card = createCard();
+
+    const message = document.createElement("div");
+
+    message.className = "message ending-text";
+
+    typeWriter(message,
+
+`أتمنى الهبل ده كله يكون فرحك، ومكنش طول زيادة أو رغيت، بس عايزك تعرفي إني بحبك أوي.
+
+وأتمنى بعد ما تشوفيه، وأول حاجة تعمليها لما تخلصيه، إنك تتصلي بيا علشان أشوف رد فعلك كامل زي ما هو.
+
+وخلي اللينك ده عندك، علشان ممكن أزود فيه حاجة بعدين.
+
+❤️ بحبك ❤️`
+
+);
+
+    card.appendChild(message);
+
+    app.appendChild(card);
+
+}
+
+// ===============================
+// START
+// ===============================
+
+renderPage();
