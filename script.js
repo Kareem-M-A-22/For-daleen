@@ -335,13 +335,15 @@ function renderRing() {
             })
         );
 
-        buttons.appendChild(
-            createButton(page.noButton, () => {
+       const noBtn = createButton(page.noButton, () => {
 
-                goTo("ringNo");
+    goTo("ringNo");
 
-            })
-        );
+});
+
+noBtn.classList.add("wrong-btn");
+
+buttons.appendChild(noBtn);
 
     };
 
