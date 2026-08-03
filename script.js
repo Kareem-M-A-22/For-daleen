@@ -5,6 +5,7 @@
 const app = document.getElementById("app");
 
 let currentPage = "password";
+let pageHistory = [];
 
 let wrongPasswordCount = 0;
 
@@ -81,14 +82,29 @@ function createButton(text, callback) {
 
 }
 
+function goBack(){
+
+    if(pageHistory.length===0)return;
+
+    currentPage=pageHistory.pop();
+
+    renderPage();
+
+}
 
 // ===============================
 // GO TO PAGE
 // ===============================
 
-function goTo(pageName) {
+function goTo(pageName){
 
-    currentPage = pageName;
+    if(currentPage!==pageName){
+
+        pageHistory.push(currentPage);
+
+    }
+
+    currentPage=pageName;
 
     renderPage();
 
@@ -221,24 +237,41 @@ function renderMessage(page) {
 
     page.buttons.forEach(btn => {
 
-        buttons.appendChild(
+        const button = createButton(btn.text, () => {
 
-            createButton(btn.text, () => {
+            goTo(btn.next);
 
-                goTo(btn.next);
+        });
 
-            })
+        if(btn.wrong){
 
-        );
+            button.classList.add("wrong-btn");
+
+        }
+
+        buttons.appendChild(button);
 
     });
 
     card.appendChild(buttons);
 
+    if(currentPage !== "password"){
+
+        const back = document.createElement("button");
+
+        back.className = "back-btn";
+
+        back.textContent = "رجعني أبص على حاجة";
+
+        back.onclick = goBack;
+
+        card.appendChild(back);
+
+    }
+
     app.appendChild(card);
 
 }
-
 // ===============================
 // MUSIC
 // ===============================
