@@ -486,3 +486,42 @@ filter:drop-shadow(0 0 18px gold);
 }
 
 }
+
+#hearts{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:-1;
+}
+
+.float-heart{
+    position:absolute;
+    color:#ffb6d5;
+    opacity:.35;
+    font-size:22px;
+    animation:floatUp linear infinite;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(110vh);
+    }
+    to{
+        transform:translateY(-20vh);
+    }
+}
+
+#logo-bg{
+    position:fixed;
+    top:25px;
+    right:35px;
+    font-size:46px;
+    font-weight:700;
+    color:#ffffffaa;
+    text-shadow:
+        0 0 12px #ffbdd9,
+        0 0 25px white;
+    z-index:-1;
+    user-select:none;
+}
