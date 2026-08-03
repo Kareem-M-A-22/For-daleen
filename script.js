@@ -309,22 +309,9 @@ function renderRing() {
     title.className = "title";
     title.textContent = page.title;
 
-    const box = document.createElement("div");
+  const box = document.createElement("div");
 box.className = "ring-box";
-
-box.innerHTML = `
-<div class="ring-lid"></div>
-
-<div class="ring-base">
-
-    <div class="ring">
-
-        💍
-
-    </div>
-
-</div>
-`;
+    
     const message = document.createElement("div");
     message.className = "message";
 
@@ -334,8 +321,7 @@ box.innerHTML = `
     box.onclick = () => {
 
        box.classList.add("opened");
-
-document.body.classList.add("blur-bg");
+        
 
         typeWriter(message, page.text);
 
