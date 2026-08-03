@@ -39,13 +39,7 @@ function createCard() {
 // TYPE WRITER
 // ===============================
 
-function typeWriter(element, text, speed = 28) {
-
-    element.innerHTML = "";
-
-    let i = 0;
-
-   function typeWriter(element, text, speed = 28, callback = null){
+function typeWriter(element, text, speed = 28, callback = null){
 
     element.innerHTML = "";
 
@@ -271,7 +265,11 @@ function renderMessage(page) {
 
     card.appendChild(message);
 
-   buttons.style.opacity = "0";
+  
+    const buttons = document.createElement("div");
+    buttons.className = "buttons";
+
+    buttons.style.opacity = "0";
 buttons.style.transform = "translateY(15px)";
 
 typeWriter(message, page.text, 28, () => {
@@ -283,8 +281,6 @@ typeWriter(message, page.text, 28, () => {
     buttons.style.transform = "translateY(0)";
 
 });
-    const buttons = document.createElement("div");
-    buttons.className = "buttons";
 
     page.buttons.forEach(btn => {
 
