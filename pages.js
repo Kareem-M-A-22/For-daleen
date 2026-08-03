@@ -116,7 +116,7 @@ minute:{
 
             text:"معنديش وقت",
 
-            next:"noTime"
+            next:"noTime",
              wrong:true
         }
 
@@ -144,7 +144,7 @@ noTime:{
 
             text:"انت هتصاحبني ولا ايه",
 
-            next:"marryJoke"
+            next:"marryJoke",
             wrong:true
         }
 
@@ -419,7 +419,7 @@ noReply:{
 
         {
             text:"لا",
-            next:"loveNo1"
+            next:"loveNo1",
             wrong:true
         }
 
@@ -442,7 +442,7 @@ loveNo1:{
 
         {
             text:"لا مش من ورا قلبي خالص",
-            next:"loveNo2"
+            next:"loveNo2",
             wrong:true
         }
 
