@@ -327,13 +327,26 @@ function startMusic() {
 
     musicStarted = true;
 
-    bgMusic = new Audio("assets/music.mp3");
+    bgMusic = document.createElement("audio");
 
+    bgMusic.src = "./assets/music.mp3";
     bgMusic.loop = true;
-
     bgMusic.volume = 0.35;
+    bgMusic.autoplay = true;
 
-    bgMusic.play().catch(() => {});
+    document.body.appendChild(bgMusic);
+
+    bgMusic.play().then(() => {
+
+        console.log("Music started");
+
+    }).catch((e) => {
+
+        console.log(e);
+
+        alert("الموسيقى مشتغلتش");
+
+    });
 
 }
 
