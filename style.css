@@ -599,3 +599,9 @@ PAGE TRANSITION
     transform .35s ease;
 
 }
+
+.hide{
+    opacity:0;
+    transform:translateY(30px);
+    transition:.35s;
+}
