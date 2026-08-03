@@ -439,3 +439,51 @@ body{
     background:#fff0f7;
 }
 
+/* ========================= */
+/* RING FINAL */
+/* ========================= */
+
+.ring-box{
+    width:260px;
+    margin:35px auto;
+    cursor:pointer;
+    perspective:1000px;
+}
+
+.ring-svg{
+    width:100%;
+    overflow:visible;
+}
+
+.lid{
+    transform-origin:160px 110px;
+    transition:transform .8s ease;
+}
+
+.ring-group{
+    opacity:0;
+    transform:translateY(35px);
+    transition:.8s ease;
+}
+
+.ring-box.opened .lid{
+    transform:rotateX(165deg);
+}
+
+.ring-box.opened .ring-group{
+    opacity:1;
+    transform:translateY(-15px);
+    animation:ringGlow 2s infinite;
+}
+
+@keyframes ringGlow{
+
+0%,100%{
+filter:drop-shadow(0 0 0px gold);
+}
+
+50%{
+filter:drop-shadow(0 0 18px gold);
+}
+
+}
