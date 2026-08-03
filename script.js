@@ -247,8 +247,18 @@ function renderMessage(page) {
 
     card.appendChild(message);
 
-    typeWriter(message, page.text);
+   buttons.style.opacity = "0";
+buttons.style.transform = "translateY(15px)";
 
+typeWriter(message, page.text, 28, () => {
+
+    buttons.style.transition = ".45s";
+
+    buttons.style.opacity = "1";
+
+    buttons.style.transform = "translateY(0)";
+
+});
     const buttons = document.createElement("div");
     buttons.className = "buttons";
 
