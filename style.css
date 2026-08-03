@@ -438,3 +438,124 @@ body{
 .wrong-btn:hover{
     background:#fff0f7;
 }
+
+/* ========================= */
+/* RING */
+/* ========================= */
+
+.ring-box{
+
+width:220px;
+height:180px;
+
+margin:35px auto;
+
+position:relative;
+
+cursor:pointer;
+
+transition:.5s;
+
+}
+
+.ring-base{
+
+position:absolute;
+
+bottom:0;
+
+width:100%;
+height:90px;
+
+background:#ff8fbd;
+
+border-radius:18px;
+
+box-shadow:0 12px 25px rgba(0,0,0,.15);
+
+overflow:hidden;
+
+}
+
+.ring-lid{
+
+position:absolute;
+
+top:20px;
+
+width:100%;
+height:70px;
+
+background:#ff72ad;
+
+border-radius:18px;
+
+transform-origin:bottom;
+
+transition:.8s;
+
+z-index:5;
+
+}
+
+.ring{
+
+position:absolute;
+
+left:50%;
+
+bottom:18px;
+
+transform:translateX(-50%);
+
+font-size:48px;
+
+transition:.8s;
+
+opacity:0;
+
+}
+
+.ring-box.opened .ring-lid{
+
+transform:rotateX(160deg);
+
+}
+
+.ring-box.opened .ring{
+
+bottom:70px;
+
+opacity:1;
+
+animation:ringGlow 2s infinite;
+
+}
+
+@keyframes ringGlow{
+
+0%{
+
+filter:drop-shadow(0 0 0px gold);
+
+}
+
+50%{
+
+filter:drop-shadow(0 0 14px gold);
+
+}
+
+100%{
+
+filter:drop-shadow(0 0 0px gold);
+
+}
+
+}
+
+.blur-bg{
+
+backdrop-filter:blur(5px);
+
+}
