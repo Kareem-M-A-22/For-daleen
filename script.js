@@ -520,3 +520,6 @@ function createFloatingHearts(){
 createFloatingHearts();
 
 renderPage();
+
+document.addEventListener("click", startMusic, { once: true });
+document.addEventListener("touchstart", startMusic, { once: true });
