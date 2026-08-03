@@ -441,4 +441,38 @@ function renderEnding() {
 // START
 // ===============================
 
+function createFloatingHearts(){
+
+    const container = document.getElementById("hearts");
+
+    if(!container) return;
+
+    const shapes = ["🤍","🩷","💕","🎀","♡","✨"];
+
+    setInterval(()=>{
+
+        const item = document.createElement("div");
+
+        item.className = "float-heart";
+
+        item.innerHTML = shapes[Math.floor(Math.random()*shapes.length)];
+
+        item.style.left = Math.random()*100 + "vw";
+
+        item.style.fontSize = (18 + Math.random()*18) + "px";
+
+        item.style.animationDuration = (10 + Math.random()*8) + "s";
+
+        container.appendChild(item);
+
+        setTimeout(()=>{
+            item.remove();
+        },18000);
+
+    },500);
+
+}
+
+createFloatingHearts();
+
 renderPage();
