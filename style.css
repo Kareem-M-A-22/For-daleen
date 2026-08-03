@@ -13,14 +13,11 @@ html{
 }
 
 body{
-
     font-family:'Cairo',sans-serif;
 
     background:
-url("background.png")
-center center / cover
-no-repeat
-fixed;;
+        url("assets/background.png") center center / cover fixed no-repeat,
+        linear-gradient(180deg,#fff7fb,#ffeaf4);
 
     overflow-x:hidden;
 
@@ -29,9 +26,7 @@ fixed;;
     color:#222;
 
     position:relative;
-
 }
-
 /* ==========================
    BACKGROUND
 ========================== */
