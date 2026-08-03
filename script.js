@@ -311,6 +311,54 @@ function renderRing() {
 
   const box = document.createElement("div");
 box.className = "ring-box";
+
+box.innerHTML = `
+<svg class="ring-svg" viewBox="0 0 320 260">
+
+<g class="lid">
+
+<rect
+x="40"
+y="35"
+width="240"
+height="85"
+rx="16"
+fill="#ff6ea8"/>
+
+</g>
+
+<g class="base">
+
+<rect
+x="40"
+y="110"
+width="240"
+height="100"
+rx="18"
+fill="#ff8fbd"/>
+
+</g>
+
+<g class="ring-group">
+
+<circle
+cx="160"
+cy="120"
+r="22"
+fill="none"
+stroke="#d6b14a"
+stroke-width="8"/>
+
+<polygon
+points="160,78 150,98 170,98"
+fill="#dff8ff"
+stroke="#9fd7ff"
+stroke-width="2"/>
+
+</g>
+
+</svg>
+`;
     
     const message = document.createElement("div");
     message.className = "message";
