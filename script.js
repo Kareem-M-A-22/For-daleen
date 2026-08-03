@@ -212,6 +212,9 @@ function renderPassword(page) {
     card.appendChild(button);
     card.appendChild(hint);
 
+    // تشغيل الموسيقى مع أول ضغطة في أي مكان
+document.body.addEventListener("click", startMusic, { once: true });
+
     app.appendChild(card);
 
 }
@@ -299,7 +302,6 @@ function startMusic() {
 
 function renderRing() {
 
-    startMusic();
 
     const page = pages.ringPage;
 
