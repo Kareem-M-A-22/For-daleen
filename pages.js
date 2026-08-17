@@ -531,7 +531,7 @@ pathChoice:{
         {
             text:"عيد ميلاد البطه 2026 🎂🐣",
             next:"birthday2026"
-        }
+        },
 
 birthday2026:{
 
