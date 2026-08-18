@@ -258,6 +258,18 @@ function renderMessage(page) {
 
     const card = createCard();
 
+    if (page.title) {
+
+    const title = document.createElement("h2");
+
+    title.className = "title";
+
+    title.textContent = page.title;
+
+    card.appendChild(title);
+
+}
+
     const message = document.createElement("div");
     message.className = "message";
 
