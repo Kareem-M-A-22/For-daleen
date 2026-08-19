@@ -372,13 +372,11 @@ function renderLink(page) {
 
     back.textContent = "رجوع";
 
-    back.onclick = () => {
+   back.onclick = () => {
+
+    resumeMusic();
 
     goBack();
-
-    setTimeout(() => {
-        resumeMusic();
-    }, 400);
 
 };
 
