@@ -340,6 +340,8 @@ typeWriter(message, page.text, 28, () => {
 
 function renderLink(page) {
 
+    pauseMusic();
+
     const card = createCard();
 
     const title = document.createElement("h2");
@@ -347,7 +349,6 @@ function renderLink(page) {
     title.className = "title";
 
     title.textContent = page.title;
-
 
     const link = document.createElement("a");
 
@@ -361,11 +362,9 @@ function renderLink(page) {
 
     link.className = "flower-link";
 
-
     card.appendChild(title);
 
     card.appendChild(link);
-
 
     const back = document.createElement("button");
 
@@ -373,10 +372,15 @@ function renderLink(page) {
 
     back.textContent = "رجوع";
 
-    back.onclick = goBack;
+    back.onclick = () => {
+
+        resumeMusic();
+
+        goBack();
+
+    };
 
     card.appendChild(back);
-
 
     app.appendChild(card);
 
@@ -387,6 +391,18 @@ function renderLink(page) {
 // ===============================
 
 function startMusic() {
+
+    function pauseMusic() {
+    if (bgMusic && !bgMusic.paused) {
+        bgMusic.pause();
+    }
+}
+
+function resumeMusic() {
+    if (bgMusic && bgMusic.paused) {
+        bgMusic.play().catch(() => {});
+    }
+}
 
     if (musicStarted) return;
 
