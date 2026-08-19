@@ -164,6 +164,10 @@ function renderPage() {
             renderMessage(page);
             break;
 
+            case "link":
+    renderLink(page);
+    break;
+
         case "ring":
             renderRing();
             break;
@@ -329,6 +333,55 @@ typeWriter(message, page.text, 28, () => {
     app.appendChild(card);
 
 }
+
+// ===============================
+// LINK PAGE
+// ===============================
+
+function renderLink(page) {
+
+    const card = createCard();
+
+    const title = document.createElement("h2");
+
+    title.className = "title";
+
+    title.textContent = page.title;
+
+
+    const link = document.createElement("a");
+
+    link.href = page.url;
+
+    link.target = "_blank";
+
+    link.rel = "noopener noreferrer";
+
+    link.textContent = page.linkText;
+
+    link.className = "flower-link";
+
+
+    card.appendChild(title);
+
+    card.appendChild(link);
+
+
+    const back = document.createElement("button");
+
+    back.className = "back-btn";
+
+    back.textContent = "رجوع";
+
+    back.onclick = goBack;
+
+    card.appendChild(back);
+
+
+    app.appendChild(card);
+
+}
+
 // ===============================
 // MUSIC
 // ===============================
