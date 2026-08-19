@@ -539,23 +539,13 @@ pathChoice:{
 
 birthday2026:{
 
-    type:"message",
+    type:"link",
 
-    title:"🎂 عيد ميلاد البطه 2026 🐣",
+    title:"دوسي هنا علشان تفتحي الموقع",
 
-    text:`المسار ده لسه بيتعمل... 👀
+    linkText:"🌹🌷💗",
 
-استني شوية وهتلاقي فيه حاجة تليق بعيد ميلادك. 🤍`,
-
-    buttons:[
-
-        {
-            text:"رجوع",
-            next:"pathChoice"
-        }
-
-    ]
+    url:"https://egreet.in/bouquet/sweet18-ya-ro7y"
 
 }
-
 };
