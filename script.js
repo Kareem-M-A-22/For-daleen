@@ -374,11 +374,13 @@ function renderLink(page) {
 
     back.onclick = () => {
 
+    goBack();
+
+    setTimeout(() => {
         resumeMusic();
+    }, 400);
 
-        goBack();
-
-    };
+};
 
     card.appendChild(back);
 
