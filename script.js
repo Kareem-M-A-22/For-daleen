@@ -990,18 +990,44 @@ function renderLink(page) {
 // MUSIC
 // ===============================
 
-function startMusic() {
+function pauseMusic() {
 
-    function pauseMusic() {
     if (bgMusic && !bgMusic.paused) {
+
         bgMusic.pause();
+
     }
+
 }
 
+
 function resumeMusic() {
+
     if (bgMusic && bgMusic.paused) {
+
         bgMusic.play().catch(() => {});
+
     }
+
+}
+
+
+function startMusic() {
+
+    if (musicStarted) return;
+
+    musicStarted = true;
+
+    bgMusic = document.createElement("audio");
+
+    bgMusic.src = "./assets/music.mp3";
+    bgMusic.loop = true;
+    bgMusic.volume = 0.35;
+
+    document.body.appendChild(bgMusic);
+
+    bgMusic.play().catch(() => {});
+
 }
 
     if (musicStarted) return;
@@ -1217,3 +1243,22 @@ renderPage();
 
 document.addEventListener("click", startMusic, { once: true });
 document.addEventListener("touchstart", startMusic, { once: true });
+
+
+// ===============================
+// MUSIC WHEN LEAVING / RETURNING
+// ===============================
+
+document.addEventListener("visibilitychange", () => {
+
+    if (document.hidden) {
+
+        pauseMusic();
+
+    } else {
+
+        resumeMusic();
+
+    }
+
+});
