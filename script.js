@@ -908,49 +908,60 @@ app.appendChild(card);
 
 function renderLink(page) {
 
-pauseMusic();  
+    pauseMusic();
 
-const card = createCard();  
+    const card = createCard();
 
-const title = document.createElement("h2");  
+    const title = document.createElement("h2");
 
-title.className = "title";  
+    title.className = "title";
 
-title.textContent = page.title;  
+    title.textContent = page.title;
 
-const link = document.createElement("a");  
+    const link = document.createElement("a");
 
-link.href = page.url;  
+    link.href = page.url;
 
-link.target = "_blank";  
+    link.target = "_blank";
 
-link.rel = "noopener noreferrer";  
+    link.rel = "noopener noreferrer";
 
-link.textContent = page.linkText;  
+    link.textContent = page.linkText;
 
-link.className = "flower-link";  
+    link.className = "flower-link";
 
-card.appendChild(title);  
+    // بعد فتح اللينك، يكمل للمسار التالي
+    link.onclick = () => {
 
-card.appendChild(link);  
+        setTimeout(() => {
 
-const back = document.createElement("button");  
+            goTo(page.next);
 
-back.className = "back-btn";  
+        }, 300);
 
-back.textContent = "رجوع";
+    };
 
-back.onclick = () => {
+    card.appendChild(title);
 
-resumeMusic();  
+    card.appendChild(link);
 
-goBack();
+    const back = document.createElement("button");
 
-};
+    back.className = "back-btn";
 
-card.appendChild(back);  
+    back.textContent = "رجوع";
 
-app.appendChild(card);
+    back.onclick = () => {
+
+        resumeMusic();
+
+        goBack();
+
+    };
+
+    card.appendChild(back);
+
+    app.appendChild(card);
 
 }
 
