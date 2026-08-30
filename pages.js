@@ -545,7 +545,29 @@ birthday2026:{
 
     linkText:"🌹🌷💗",
 
-    url:"https://egreet.in/bouquet/sweet18-ya-ro7y"
+    url:"https://egreet.in/bouquet/sweet18-ya-ro7y",
+
+    next:"afterBirthday"
+
+},
+
+afterBirthday:{
+
+    type:"message",
+
+    text:`كان نفسي اكتب اكتر عموما بس للأسف في ليمت لعدد الحروف بس ممكن اكمل هنا عادي اظن مسموحلي اتكلم براحتي`,
+
+    buttons:[
+
+        {
+
+            text:"كمل",
+
+            next:"intro"
+
+        }
+
+    ]
 
 }
 
