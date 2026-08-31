@@ -930,25 +930,19 @@ link.textContent = page.linkText;
 
 link.className = "flower-link";  
 
-card.appendChild(title);  
+card.appendChild(title);
+card.appendChild(link);
 
-card.appendChild(link);  
-
-const back = document.createElement("button");  
-
-back.className = "back-btn";  
-
+const back = document.createElement("button");
+back.className = "back-btn";
 back.textContent = "رجوع";
 
 back.onclick = () => {
-
-resumeMusic();  
-
-goBack();
-
+    resumeMusic();
+    goBack();
 };
 
-card.appendChild(back);  
+card.appendChild(back);
 
 app.appendChild(card);
 
