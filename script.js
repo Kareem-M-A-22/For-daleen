@@ -908,46 +908,61 @@ app.appendChild(card);
 
 function renderLink(page) {
 
-pauseMusic();  
+    pauseMusic();
 
-const card = createCard();  
+    const card = createCard();
 
-const title = document.createElement("h2");  
+    const title = document.createElement("h2");
 
-title.className = "title";  
+    title.className = "title";
 
-title.textContent = page.title;  
+    title.textContent = page.title;
 
-const link = document.createElement("a");  
+    const link = document.createElement("a");
 
-link.href = page.url;  
+    link.href = page.url;
 
-link.target = "_blank";  
+    link.target = "_blank";
 
-link.rel = "noopener noreferrer";  
+    link.rel = "noopener noreferrer";
 
-link.textContent = page.linkText;  
+    link.textContent = page.linkText;
 
-link.className = "flower-link";  
+    link.className = "flower-link";
 
-card.appendChild(title);
-card.appendChild(link);
+    card.appendChild(title);
+    card.appendChild(link);
 
-const back = document.createElement("button");
-back.className = "back-btn";
-back.textContent = "رجوع";
+    const next = document.createElement("button");
 
-back.onclick = () => {
-    resumeMusic();
-    goBack();
-};
+    next.className = "next-btn";
 
-card.appendChild(back);
+    next.textContent = "كمل";
 
-app.appendChild(card);
+    next.onclick = () => {
+        goTo(page.next);
+    };
 
+    card.appendChild(next);
+
+    const back = document.createElement("button");
+
+    back.className = "back-btn";
+
+    back.textContent = "رجعني ابص على حاجه";
+
+    back.onclick = () => {
+
+        resumeMusic();
+
+        goBack();
+
+    };
+
+    card.appendChild(back);
+
+    app.appendChild(card);
 }
-
 // ===============================
 // MUSIC
 // ===============================
