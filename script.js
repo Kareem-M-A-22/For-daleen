@@ -930,37 +930,37 @@ function renderLink(page) {
 
     link.className = "flower-link";
 
-    card.appendChild(title);
-    card.appendChild(link);
+   card.appendChild(title);
 
-    const next = document.createElement("button");
+card.appendChild(link);
 
-    next.className = "next-btn";
+link.style.display = "block";
+link.style.marginBottom = "15px";
 
-    next.textContent = "كمل";
+const next = document.createElement("button");
 
-    next.onclick = () => {
-        goTo(page.next);
-    };
+next.className = "main-btn";
 
-    card.appendChild(next);
+next.textContent = "كمل";
 
-    const back = document.createElement("button");
+next.onclick = () => {
+    goTo(page.next);
+};
 
-    back.className = "back-btn";
+card.appendChild(next);
 
-    back.textContent = "رجعني ابص على حاجه";
+const back = document.createElement("button");
 
-    back.onclick = () => {
+back.className = "back-btn";
 
-        resumeMusic();
+back.textContent = "رجعني ابص على حاجه";
 
-        goBack();
+back.onclick = () => {
+    resumeMusic();
+    goBack();
+};
 
-    };
-
-    card.appendChild(back);
-
+card.appendChild(back);
     app.appendChild(card);
 }
 // ===============================
