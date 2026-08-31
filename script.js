@@ -908,54 +908,52 @@ app.appendChild(card);
 
 function renderLink(page) {
 
-    pauseMusic();
+pauseMusic();  
 
-    const card = createCard();
+const card = createCard();  
 
-    const title = document.createElement("h2");
+const title = document.createElement("h2");  
 
-    title.className = "title";
+title.className = "title";  
 
-    title.textContent = page.title;
+title.textContent = page.title;  
 
-    const link = document.createElement("a");
+const link = document.createElement("a");  
 
-    link.href = page.url;
+link.href = page.url;  
 
-    link.target = "_blank";
+link.target = "_blank";  
 
-    link.rel = "noopener noreferrer";
+link.rel = "noopener noreferrer";  
 
-    link.textContent = page.linkText;
+link.textContent = page.linkText;  
 
-    link.className = "flower-link";
+link.className = "flower-link";  
 
-   card.appendChild(title);
-card.appendChild(link);
+card.appendChild(title);  
 
-const next = document.createElement("button");
-next.className = "next-btn";
-next.textContent = "كمل";
+card.appendChild(link);  
 
-next.onclick = () => {
-    goTo(page.next);
-};
+const back = document.createElement("button");  
 
-card.appendChild(next);
+back.className = "back-btn";  
 
-const back = document.createElement("button");
-back.className = "back-btn";
-back.textContent = "رجعني ابص على حاجه";
+back.textContent = "رجوع";
 
 back.onclick = () => {
-    resumeMusic();
-    goBack();
+
+resumeMusic();  
+
+goBack();
+
 };
 
-card.appendChild(back);
+card.appendChild(back);  
 
 app.appendChild(card);
+
 }
+
 // ===============================
 // MUSIC
 // ===============================
