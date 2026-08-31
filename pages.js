@@ -537,7 +537,21 @@ pathChoice:{
 
 },
 
-afterBirthday:{
+birthday2026:{
+
+    type:"link",
+
+    title:"دوسي هنا علشان تفتحي الموقع",
+
+    linkText:"🌹🌷💗",
+
+    url:"https://egreet.in/bouquet/sweet18-ya-ro7y",
+
+    next:"afterBirthday"
+
+},
+    
+    afterBirthday:{
 
     type:"message",
 
@@ -581,7 +595,24 @@ afterFlower2:{
 
         {
             text:"كمل",
-            next:"intro"
+            next:"afterBirthdayEnd"
+        }
+
+    ]
+
+},
+
+afterBirthdayEnd:{
+
+    type:"message",
+
+    text:`كمل هنا كلامك اللي عايز تقوله.`,
+
+    buttons:[
+
+        {
+            text:"كمل",
+            next:"ending"
         }
 
     ]
