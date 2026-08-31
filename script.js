@@ -930,20 +930,23 @@ function renderLink(page) {
 
     link.className = "flower-link";
 
-    // بعد فتح اللينك، يكمل للمسار التالي
-    link.onclick = () => {
-
-        setTimeout(() => {
-
-            goTo(page.next);
-
-        }, 300);
-
-    };
-
     card.appendChild(title);
 
     card.appendChild(link);
+
+
+    // زرار كمل بعد فتح الموقع
+
+    const nextButton = createButton("كمل", () => {
+
+        resumeMusic();
+
+        goTo(page.next);
+
+    });
+
+    card.appendChild(nextButton);
+
 
     const back = document.createElement("button");
 
@@ -964,7 +967,6 @@ function renderLink(page) {
     app.appendChild(card);
 
 }
-
 // ===============================
 // MUSIC
 // ===============================
