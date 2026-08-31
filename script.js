@@ -930,42 +930,31 @@ function renderLink(page) {
 
     link.className = "flower-link";
 
-    card.appendChild(title);
+   card.appendChild(title);
+card.appendChild(link);
 
-    card.appendChild(link);
+const next = document.createElement("button");
+next.className = "next-btn";
+next.textContent = "كمل";
 
+next.onclick = () => {
+    goTo(page.next);
+};
 
-    // زرار كمل بعد فتح الموقع
+card.appendChild(next);
 
-    const nextButton = createButton("كمل", () => {
+const back = document.createElement("button");
+back.className = "back-btn";
+back.textContent = "رجعني ابص على حاجه";
 
-        resumeMusic();
+back.onclick = () => {
+    resumeMusic();
+    goBack();
+};
 
-        goTo(page.next);
+card.appendChild(back);
 
-    });
-
-    card.appendChild(nextButton);
-
-
-    const back = document.createElement("button");
-
-    back.className = "back-btn";
-
-    back.textContent = "رجوع";
-
-    back.onclick = () => {
-
-        resumeMusic();
-
-        goBack();
-
-    };
-
-    card.appendChild(back);
-
-    app.appendChild(card);
-
+app.appendChild(card);
 }
 // ===============================
 // MUSIC
