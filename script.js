@@ -535,13 +535,13 @@ app.appendChild(card);
 
 function renderEnding() {
 
-const card = createCard();  
+    const card = createCard();
 
-const message = document.createElement("div");  
+    const message = document.createElement("div");
 
-message.className = "message ending-text";  
+    message.className = "message ending-text";
 
-typeWriter(message,
+    typeWriter(message,
 
 `أتمنى الهبل ده كله يكون فرحك، ومكنش طول زيادة أو رغيت، بس عايزك تعرفي إني بحبك أوي.
 
@@ -553,18 +553,23 @@ typeWriter(message,
 
 ❤️ بحبك ❤️`
 
-);
+    );
 
-card.appendChild(message);
+    card.appendChild(message);
 
-const againButton = createButton("نقول تاني", () => {
-    goTo("pathChoice");
-});
+    // زرار الرجوع لصفحة اختيار المسار
+    const buttons = document.createElement("div");
+    buttons.className = "buttons";
 
-card.appendChild(againButton);
+    const againButton = createButton("نقول تاني", () => {
+        goTo("pathChoice");
+    });
 
-app.appendChild(card);
+    buttons.appendChild(againButton);
 
+    card.appendChild(buttons);
+
+    app.appendChild(card);
 }
 
 // ===============================
