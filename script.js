@@ -529,64 +529,7 @@ app.appendChild(card);
 
 }
 
-// ===============================
-// ENDING PAGE
-// ===============================
 
-// ===============================
-// ENDING PAGE
-// ===============================
-
-function renderEnding() {
-
-    const card = createCard();
-
-    const message = document.createElement("div");
-
-    message.className = "message ending-text";
-
-    const buttons = document.createElement("div");
-
-    buttons.className = "buttons";
-
-    buttons.style.opacity = "0";
-    buttons.style.transform = "translateY(15px)";
-
-    typeWriter(message,
-
-`أتمنى الهبل ده كله يكون فرحك، ومكنش طول زيادة أو رغيت، بس عايزك تعرفي إني بحبك أوي.
-
-وأتمنى بعد ما تشوفيه، وأول حاجة تعمليها لما تخلصيه، إنك تتصلي بيا علشان أشوف رد فعلك كامل زي ما هو.
-
-واتمنى بجد اني اسمع منك بحبك بعد ما تقري كل ده
-
-وخلي اللينك ده عندك، علشان ممكن أزود فيه حاجة بعدين.
-
-❤️ بحبك ❤️`
-
-    , () => {
-
-        buttons.style.transition = ".45s";
-        buttons.style.opacity = "1";
-        buttons.style.transform = "translateY(0)";
-
-    });
-
-    const againButton = createButton("نقول تاني", () => {
-
-        pageHistory = [];
-        currentPage = "pathChoice";
-        renderPage();
-
-    });
-
-    buttons.appendChild(againButton);
-
-    card.appendChild(message);
-    card.appendChild(buttons);
-
-    app.appendChild(card);
-}
 // ===============================
 // START
 // ===============================
