@@ -1116,7 +1116,7 @@ function renderEnding() {
 
 ❤️ بحبك ❤️`
 
-    , 37, () => {
+    , 28, () => {
 
         buttons.style.transition = ".45s";
         buttons.style.opacity = "1";
