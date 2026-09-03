@@ -533,6 +533,10 @@ app.appendChild(card);
 // ENDING PAGE
 // ===============================
 
+// ===============================
+// ENDING PAGE
+// ===============================
+
 function renderEnding() {
 
     const card = createCard();
@@ -557,12 +561,18 @@ function renderEnding() {
 
     card.appendChild(message);
 
-    // زرار الرجوع لصفحة اختيار المسار
     const buttons = document.createElement("div");
+
     buttons.className = "buttons";
 
     const againButton = createButton("نقول تاني", () => {
-        goTo("pathChoice");
+
+        pageHistory = [];
+
+        currentPage = "pathChoice";
+
+        renderPage();
+
     });
 
     buttons.appendChild(againButton);
