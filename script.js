@@ -1118,7 +1118,7 @@ function renderEnding() {
 
     , 38, () => {
 
-        buttons.style.transition = ".40s";
+        buttons.style.transition = ".45s";
         buttons.style.opacity = "1";
         buttons.style.transform = "translateY(0)";
 
