@@ -553,9 +553,15 @@ typeWriter(message,
 
 ❤️ بحبك ❤️`
 
-);  
+);
 
-card.appendChild(message);  
+card.appendChild(message);
+
+const againButton = createButton("نقول تاني", () => {
+    goTo("pathChoice");
+});
+
+card.appendChild(againButton);
 
 app.appendChild(card);
 
