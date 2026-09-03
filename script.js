@@ -1143,13 +1143,13 @@ app.appendChild(card);
 
 function renderEnding() {
 
-const card = createCard();  
+    const card = createCard();
 
-const message = document.createElement("div");  
+    const message = document.createElement("div");
 
-message.className = "message ending-text";  
+    message.className = "message ending-text";
 
-typeWriter(message,
+    typeWriter(message,
 
 `أتمنى الهبل ده كله يكون فرحك، ومكنش طول زيادة أو رغيت، بس عايزك تعرفي إني بحبك أوي.
 
@@ -1161,11 +1161,29 @@ typeWriter(message,
 
 ❤️ بحبك ❤️`
 
-);
+    );
 
-card.appendChild(message);  
+    card.appendChild(message);
 
-app.appendChild(card);
+    const buttons = document.createElement("div");
+
+    buttons.className = "buttons";
+
+    const againButton = createButton("نقول تاني", () => {
+
+        pageHistory = [];
+
+        currentPage = "pathChoice";
+
+        renderPage();
+
+    });
+
+    buttons.appendChild(againButton);
+
+    card.appendChild(buttons);
+
+    app.appendChild(card);
 
 }
 
